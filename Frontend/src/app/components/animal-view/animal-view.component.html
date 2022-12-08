@@ -1,0 +1,72 @@
+<div class="container my-5">
+  <div class="row justify-content-center">
+
+    <!-- Ficha Animal -->
+    <h3 class="text-center mb-4">{{ animal.nombre }}</h3>
+    <div class="col-8 col-lg-3 p-0">
+      <div class="bg-light shadow d-flex flex-wrap justify-content-center align-items-center w-100 h-100"
+        *ngIf="animal">
+        <div>
+          <p><strong>Sexo: </strong>{{ animal.sexo }}</p>
+          <p><strong>Raza: </strong>{{ animal.raza }}</p>
+          <p><strong>Edad: </strong> {{ animal.edad }} año(s)</p>
+          <p><strong>Tamaño: </strong>{{animal['tamaño']}}</p>
+          <p><strong>Salud: </strong>{{animal.salud}} </p>
+          <p><strong>Urgencia: </strong>{{animal.urgencia}}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección Imágenes -->
+    <div class="col-8 col-lg-5 p-0 no-p-xl">
+      <div id="carouselExampleIndicators" class="carousel slide shadow" data-bs-ride="true">
+        <div class="carousel-inner">
+          <div class="items-container" *ngFor="let imagen of animal?.imagenes; let last = last">
+            <div class="carousel-item" *ngIf="imagen != 'undefined'">
+              <img [src]="baseUrl + imagen" class="d-block carousel img-fluid border border-3 rounded-3"
+                [alt]="animal.tipo">
+            </div>
+            <span *ngIf="last">{{setActiveImg()}}</span>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+    <!--Espaciado-->
+    <br><br><br>
+
+    <!-- Cuadro Descripcion -->
+    <div class="mt-4 col-9 col-sm-8 col-md-8">
+      <div class="justify-content-start" *ngIf="animal">
+        <h5 class="mt-4">Hablemos un poco de mí...</h5>
+        <p>{{ animal.descripcion }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!--Espaciado-->
+  <br><br><br><br>
+
+  <!-- Cuadro de ayudar -->
+  <div class="d-flex align-items-center justify-content-center">
+
+    <div>
+      <h2 class=" ayudar__text">Haz Click En Mi Huella Si Quieres Ayudarme</h2>
+      <div class="d-flex justify-content-center ">
+        <a [routerLink]="'/contacto'"><img class="ayudar__icono__img " src="../../../assets/images/huella2.jpg"
+            alt="huella perro roja"></a>
+      </div>
+    </div>
+
+  </div>
+</div>

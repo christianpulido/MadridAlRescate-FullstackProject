@@ -1,0 +1,39 @@
+<!-- Maquetación del formulario de login -->
+<section class="loginBody">
+    <div>
+        <div class="card mx-4  bg-danger p-5">
+            <h1 class="text-center text-light">Login</h1>
+            <form class="" #loginForm="ngForm" (ngSubmit)="getDataForm(loginForm)">
+                <!-- Campo login email -->
+                <div class="form-group form-login mx-3">
+                    <i class="bi bi-envelope icon"></i>
+                    <label for="email" class="form-label"></label>
+                    <input type="email" id="email" class="form-control px-5" placeholder="Email" name="email" ngModel>
+                </div>
+
+                <!-- Campo login password -->
+                <div class="form-group form-login mx-3">
+                    <i class="bi bi-lock icon"></i>
+                    <label for="password" class="form-label"></label>
+                    <input type="password" id="password" class="form-control px-5 " placeholder="Contraseña"
+                        name="password" ngModel>
+                </div>
+
+                <!-- Mensaje de error usuario y/o contraseña -->
+                <p class="text-light text-center mt-3 d-block" *ngIf="error.length > 0">{{error}}</p>
+
+                <!-- Botón Inicio seción -->
+                <div class="align-items-center d-flex justify-content-center mt-4">
+                    <input type="submit" value="Iniciar Sesión"
+                        class="btn text-dark bg-white btn-outline-light opacity-75 w-50 ">
+                </div>
+            </form>
+
+            <!-- Link "Olvidé contraseña" -->
+            <div class=" text-light m-3 ms-0 text-center">
+                <a class="text-decoration-none text-light px-2" [routerLink]="['/recuperar-contraseña']">Olvidé mi
+                    contraseña</a>
+            </div>
+        </div>
+    </div>
+</section>

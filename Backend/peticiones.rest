@@ -1,0 +1,239 @@
+// ANIMALS
+
+GET http://localhost:3000/api/animals
+
+
+###
+GET http://localhost:3000/api/animals/0
+
+
+###
+POST http://localhost:3000/api/animals
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInVzZXJBZG1pbiI6MSwiZXhwaXJlc0F0IjoxNjY4NzQ0NDA5LCJpYXQiOjE2Njg3MjY0MDl9.a4uS_vlPu3ejUnvX3Ra7txWnOBZt4fZh_Cyt-3bxS-w
+
+
+{
+    "nombre": "Perico",
+    "edad": 1,
+    "tipo": "gato",
+    "raza": "Miau Miau",
+    "tamaño": "Pequeño",
+    "sexo": "Macho",
+    "localizacion": "Madrid",
+    "salud": "Buena",
+    "descripcion": "Amistoso",
+    "urgencia": "Poco",
+    "fechaEntrada": "2022-11-08",
+    "status": "Adoptado",
+    "isActive": 1
+  
+
+}
+
+
+###
+PUT  http://localhost:3000/api/animals/3
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInVzZXJBZG1pbiI6MCwiZXhwaXJlc0F0IjoxNjcyMDI2Njc3LCJpYXQiOjE2Njg0MjY2Nzd9.Ae3-BjxwgPxDIdK9oHVxXAouzMtHhhCMU5n3kXI47mk
+
+{
+  
+    "nombre": "Perlita de Hungría",
+    "edad": 1,
+    "tipo": "Gato",
+    "raza": "MIAU ",
+    "tamaño": "Grande",
+    "sexo": "Macho",
+    "localizacion": "Madrid",
+    "salud": "Buena",
+    "descripcion": "Amistoso",
+    "urgencia": "Poco",
+    "fechaEntrada": "2022-11-08",
+    "status": "Adoptado",
+    "isActive": 1
+  
+
+}
+
+
+###
+DELETE http://localhost:3000/api/animals/2
+
+
+
+//PERFIL
+
+
+###
+GET http://localhost:3000/api/perfil
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInVzZXJBZG1pbiI6MCwiZXhwaXJlc0F0IjoxNjY4ODMyMDU3LCJpYXQiOjE2Njg4MTQwNTd9.3fM-X2GOy7-N4QXqTbbceA-q6Qycb3CLaYbUh3fzDLI
+
+
+###
+GET http://localhost:3000/api/perfil/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInVzZXJBZG1pbiI6MCwiZXhwaXJlc0F0IjoxNjcyMDI2Njc3LCJpYXQiOjE2Njg0MjY2Nzd9.Ae3-BjxwgPxDIdK9oHVxXAouzMtHhhCMU5n3kXI47mk
+
+
+###
+POST http://localhost:3000/api/perfil
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInVzZXJBZG1pbiI6MCwiZXhwaXJlc0F0IjoxNjcyMDI2Njc3LCJpYXQiOjE2Njg0MjY2Nzd9.Ae3-BjxwgPxDIdK9oHVxXAouzMtHhhCMU5n3kXI47mk
+
+{
+    "nombre": "Clea",
+    "apellido": "kijun",
+    "edad": "50",
+    "dni": "68597841A",
+    "telefono": "654987123",
+    "email": "cleak@gmail.com",
+    "direccion": "Madrid",
+    "mascota": "si",
+    "tipoInmueble": "piso",
+    "descripcion": "Poco",
+    "IsActive": 1,
+    "status": "Acogida"
+}
+
+
+### 
+PUT http://localhost:3000/api/perfil/3
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInVzZXJBZG1pbiI6MSwiZXhwaXJlc0F0IjoxNjY4ODkwNDQ4LCJpYXQiOjE2Njg4NzI0NDh9.2Q89ymdk4SbkPzVR1mNNPXr2PlDyF2rBAINE6UM-uK0
+
+{
+    "nombre": "Jacintillo",
+    "apellido": "Benavente",
+    "edad": "20",
+    "dni": "65251478S",
+    "telefono": "654987123",
+    "email": "kolipo@gmail.com",
+    "direccion": "Madrid",
+    "mascota": "si",
+    "tipoInmueble": "piso",
+    "descripcion": "Poco",
+    "IsActive": "1",
+    "status": "Apadrinar"
+}
+
+
+###
+DELETE http://localhost:3000/api/perfil/2
+
+//DONACIONES
+
+
+###
+GET http://localhost:3000/api/donaciones
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInVzZXJBZG1pbiI6MCwiZXhwaXJlc0F0IjoxNjY4ODMwOTA4LCJpYXQiOjE2Njg4MTI5MDh9.uLz7kj_7mzbMP1z6NBrxlHnGHinQQniO-pGxRvRjOng
+
+
+###
+POST http://localhost:3000/api/donaciones
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInVzZXJBZG1pbiI6MCwiZXhwaXJlc0F0IjoxNjcyMDI2Njc3LCJpYXQiOjE2Njg0MjY2Nzd9.Ae3-BjxwgPxDIdK9oHVxXAouzMtHhhCMU5n3kXI47mk
+
+
+{
+  
+    "nombre": "Manolilloo",
+    "cantidad": "300€",
+    "fecha": "2022-06-01",
+    "metodoPago": "tranferencia",
+    "isTeaming": "no"
+
+}
+
+
+
+###
+PUT  http://localhost:3000/api/donaciones/2
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInVzZXJBZG1pbiI6MCwiZXhwaXJlc0F0IjoxNjcyMDI2Njc3LCJpYXQiOjE2Njg0MjY2Nzd9.Ae3-BjxwgPxDIdK9oHVxXAouzMtHhhCMU5n3kXI47mk
+
+
+{
+  
+    "nombre": "Juannito",
+    "cantidad": "50€",
+    "fecha": "2022-06-01",
+    "metodoPago": "bizum",
+    "isTeaming": "no"
+
+}
+
+###
+DELETE  http://localhost:3000/api/donaciones/1
+
+
+//USUARIOS
+
+###
+GET http://localhost:3000/api/usuarios
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInVzZXJBZG1pbiI6MCwiZXhwaXJlc0F0IjoxNjY4ODMyMDU3LCJpYXQiOjE2Njg4MTQwNTd9.3fM-X2GOy7-N4QXqTbbceA-q6Qycb3CLaYbUh3fzDLI
+
+###
+GET http://localhost:3000/api/usuarios/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInVzZXJBZG1pbiI6MCwiZXhwaXJlc0F0IjoxNjY4ODMyMDU3LCJpYXQiOjE2Njg4MTQwNTd9.3fM-X2GOy7-N4QXqTbbceA-q6Qycb3CLaYbUh3fzDLI
+
+
+###
+POST http://localhost:3000/api/usuarios/register
+Content-Type: application/json
+
+{
+    "nombre": "Antonio",
+    "apellido": "Pitoño",
+    "email": "antonio@gmail.com",
+    "password": "Admin123",
+    "isAdmin": 1, 
+    "isActive": 0
+}
+
+
+###
+PUT  http://localhost:3000/api/usuarios/editar/2
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInVzZXJBZG1pbiI6MSwiZXhwaXJlc0F0IjoxNjY4ODc0NjYxLCJpYXQiOjE2Njg4NTY2NjF9.335YAnATAP6cYqbF-N6xix_1ypztbYGJ3JnOkcHUljs
+
+{
+    "nombre": "Antonio",
+    "apellido": "Pitoño",
+    "isAdmin": "0", 
+    "isActive": "1"
+}
+
+
+###
+POST http://localhost:3000/api/usuarios/login
+Content-Type: application/json
+
+{
+    
+    "email": "ines@codehouse.academy",
+    "password": "Admin123",
+    
+}
+
+
+###
+POST http://localhost:3000/api/animals/info 
+Content-Type: application/json
+
+
+{
+        
+    "asunto": "adoptar un perro", 
+    "email": "damarisraboso@gmail.com",
+    "telefono": "649775671",
+    "mensaje": "bla bla bla"
+
+}
+
+
+
+###
+http://localhost:3000/images/NOMBREIMAGEN.EXTENSION
+
+
+

@@ -1,0 +1,123 @@
+h1 {
+    font-family: 'Caveat', cursive;
+
+}
+
+p.error {
+    font-size: 12px;
+
+}
+
+.center {
+
+    left: 30px;
+
+}
+
+.logo-container {
+    left: 29px;
+    position: absolute;
+    top: 120px;
+}
+
+.logo-container img {
+    width: 85%;
+    height: auto;
+    border-radius: 10%;
+}
+
+.card {
+    width: 900px;
+    height: 700px;
+    box-shadow: rgba(0, 0, 0, 0.35)0px 5px 15px;
+    border-radius: 20px;
+    overflow: visible;
+    position: relative;
+    /* margin: 20px; */
+
+}
+
+.card h1 {
+    text-align: center;
+}
+
+.card .additional {
+    position: absolute;
+    width: 200px;
+    height: 100%;
+    overflow: hidden;
+    /* z-index: 2; */
+    border-radius: 20px;
+    width: 100%;
+
+}
+
+
+
+.card .additional .user-card {
+    width: 200px;
+    height: 100%;
+    position: relative;
+    float: left;
+    border-radius: 20px;
+
+}
+
+.card .additional .user-card .level,
+.card .additional .user-card .points {
+    top: 15%;
+    color: #fff;
+    font-size: 0.75em;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.15);
+    padding: 0.125rem 0.75rem;
+
+
+}
+
+
+
+.card .additional .more-info {
+    width: 600px;
+    position: absolute;
+    left: 200px;
+    height: 100%;
+    margin-top: 50px;
+
+}
+
+@media only screen and (min-width:320px) and (max-width:500px) {
+    .card .additional .more-info {
+        width: 300px;
+        position: absolute;
+        height: 100%;
+        margin-top: 50px;
+        left: 10%;
+        right: 10%;
+
+    }
+
+    .logo-container {
+        display: none;
+
+    }
+}
+
+@media only screen and (min-width:500px) and (max-width:840px) {
+    .card .additional .more-info {
+        width: 400px;
+        position: absolute;
+        height: 100%;
+        margin-top: 50px;
+        left: 20%;
+        right: 20%;
+
+
+
+    }
+
+    .logo-container {
+        display: none;
+
+    }
+}

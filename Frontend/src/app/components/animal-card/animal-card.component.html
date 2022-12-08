@@ -1,0 +1,28 @@
+<!-- Tarjeta Resumen Animal -->
+<div class="card shadow">
+
+  <!-- Foto -->
+  <div *ngIf="myAnimal.imagenes">
+    <img [src]="baseUrl + myAnimal.imagenes[0]" class="card-img-top border border-4" [alt]="myAnimal.tipo">
+  </div>
+
+  <!-- Nombre -->
+  <div class="card-body p-2">
+    <h5 class="card-title text-center m-0">{{ myAnimal.nombre }}</h5>
+  </div>
+
+  <!-- Algunas características -->
+  <ul class="list-group list-group-flush border border-0 text-center">
+    <li class="list-group-item border bg-light border-0 m-1 p-1">{{ myAnimal.sexo }}</li>
+    <li class="list-group-item border bg-light border-0 m-1 p-1">{{ myAnimal.edad }} año</li>
+    <li class="list-group-item border bg-light border-0 m-1 p-1">{{ myAnimal['tamaño'] }}
+    </li>
+  </ul>
+
+  <!-- Hiperínculo más información -->
+  <div class="card-body p-2 text-center mb-1">
+    <a class="card-link m-0 btn border border-danger text-danger"
+      [routerLink]="['/catalogo', myAnimal.id_animal]">Quiero saber
+      más</a>
+  </div>
+</div>

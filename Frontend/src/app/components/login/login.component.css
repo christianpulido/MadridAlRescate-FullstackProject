@@ -1,0 +1,51 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Centrar Caja Login */
+.loginBody {
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    border-radius: 12px;
+}
+
+.form-error {
+    font-size: 5px;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 25px;
+}
+
+.login form input [type="submit"] {
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+/* Situar icono dentro del placeholder */
+form .form-login {
+    position: relative;
+}
+
+.icon {
+    position: absolute;
+    top: calc(50%);
+    left: 20px;
+}
+
+.form-control {
+    padding-left: 50px;
+}
+
+.login form .form-group {
+    margin-bottom: 12px;
+}

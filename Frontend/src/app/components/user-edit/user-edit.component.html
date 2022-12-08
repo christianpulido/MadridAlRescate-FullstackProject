@@ -1,0 +1,70 @@
+<!-- Editar Usuario -->
+<div class="container mt-5">
+    <form [formGroup]="editUser" (ngSubmit)="onSubmit()">
+        <div class="row justify-content-center" *ngIf="userToEdit">
+            <div class="col-8  mb-3 me-1">
+                <p class="h5 text-center"></p>
+            </div>
+
+            <!-- Campo nombre -->
+            <div class="col-8 col-lg-4 mb-3 me-1">
+                <label class="form-label">Nombre</label>
+                <input type="text" class="form-control" formControlName="nombre">
+                <p class="error" *ngIf="checkControl('nombre','minlength')">El campo tiene que tener mínimo 3 caracteres
+                </p>
+                <p class="error" *ngIf="checkControl('nombre','maxlength')">El nombre debe tener como máximo 30
+                    caracteres</p>
+            </div>
+
+            <!-- Campo Apellidos -->
+            <div class="col-8 col-lg-4 mb-3 me-1">
+                <label class="form-label">Apellido</label>
+                <input type="text" class="form-control" formControlName="apellido">
+                <p class="error" *ngIf="checkControl('nombre','minlength')">El campo tiene que tener mínimo 3 caracteres
+                </p>
+                <p class="error" *ngIf="checkControl('nombre','maxlength')">El apellido debe tener como máximo 50
+                    caracteres
+            </div>
+
+            <!-- Campo es Administración -->
+            <div class="col-8 col-lg-4 mb-3 me-1">
+                <label class="form-label">Administrador</label>
+                <select class="form-select" formControlName="isAdmin">
+                    <option value="0">No</option>
+                    <option value="1">Si</option>
+                    <p class="error" *ngIf="checkControl('isAdmin','required')">El campo Administrador es obligatorio
+                    </p>
+                </select>
+            </div>
+
+            <!-- Campo Borrado Lógico -->
+            <div class="col-8 col-lg-4 mb-3 me-1">
+                <label class="form-label">Usuario Activo</label>
+                <select class="form-select" formControlName="isActive">
+                    <option value="0">No</option>
+                    <option value="1">Si</option>
+                    <p class="error" *ngIf="checkControl('isActive','required')">El campo Usuario activo es obligatorio
+                    </p>
+                </select>
+            </div>
+
+            <!-- Campo Email -->
+            <div class="col-8  mb-3 me-1">
+                <label class="form-label">Email</label>
+                <input type="text" class="form-control" formControlName="email">
+                <p class="error" *ngIf="checkControl('email','pattern')">La contraseña debe tener de 4 a 12 caracteres,
+                    mayúsculas, minúsculas y números</p>
+
+            </div>
+
+            <!-- Botón Cancelar -->
+            <div class="col-8 my-3 mx-1 text-center">
+                <button [routerLink]="['/cuadro-mandos', 'usuarios']"
+                    class="btn btn-white text-danger border border-danger mx-2 px-2">Cancelar</button>
+                <input type="submit" value="Editar" class="btn btn-danger mx-2 px-3" [disabled]="!editUser.valid">
+            </div>
+
+
+        </div>
+    </form>
+</div>

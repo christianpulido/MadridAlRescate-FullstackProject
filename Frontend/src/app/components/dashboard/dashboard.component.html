@@ -1,0 +1,44 @@
+<div class="container my-5 ">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+
+    <!-- Nombre De Usuario & Icono -->
+    <div class="d-flex align-items-center ">
+      <i class="bi bi-person-fill h3 me-2"></i>
+      <h4 class="my-0 h6" *ngIf="profile">{{ profile.nombre }} {{ profile.apellido }}</h4>
+    </div>
+
+    <!-- Botón Log Out -->
+    <button class="btn btn-danger " (click)="logout()">Cerrar Sesión</button>
+  </div>
+
+  <!-- Titulo Panel -->
+  <div class="text-center mb-4 bg-light p-2">
+    <h3>Panel De Administración</h3>
+  </div>
+
+  <!-- Categorías Cuadro de mandos -->
+  <div class="">
+    <ul class="nav nav-tabs nav-fill">
+      <li class="nav-item">
+        <a class="nav-link text-secondary" [routerLink]="['/cuadro-mandos/animales']"
+          routerLinkActive="active text-danger">ANIMALES</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-secondary" [routerLink]="['/cuadro-mandos/personas']"
+          routerLinkActive="active text-danger">PERSONAS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-secondary" [routerLink]="['/cuadro-mandos/donaciones']"
+          routerLinkActive="active text-danger">DONACIONES</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-secondary" [routerLink]="['/cuadro-mandos/usuarios']"
+          routerLinkActive="active text-danger">USUARIOS</a>
+      </li>
+    </ul>
+
+    <div class="col-12">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

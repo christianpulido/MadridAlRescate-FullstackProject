@@ -1,0 +1,90 @@
+
+<!-- CARROUSEL DE BIENVENIDA -->
+<div id="carouselHome" class="carousel slide carousel-fade mt-5 shadow" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item position-relative active">
+      <img src="assets/images/fotoPerro1.JPG" alt="fotoPerro1">
+      <p class="h1 text-white top-50 start-50 translate-middle position-absolute">
+        <span class="text-danger">Adopta,</span> salva a un animal.
+      </p>
+    </div>
+    <div class="carousel-item position-relative">
+      <img src="assets/images/fotoGato1.jpg" alt="fotoGato1">
+      <p class="h1 text-danger top-50 start-50 translate-middle position-absolute"><span
+          class="text-white">Ayúdanos</span> a conseguirles un hogar</p>
+    </div>
+    <div class="carousel-item position-relative">
+      <img src="assets/images/fotoPerro3.jpg" alt="fotoPerro3">
+      <p class="h1 text-white top-50 start-50 translate-middle position-absolute"><span class="text-danger">Tu
+          donativo</span> es de gran ayuda</p>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselHome" data-bs-slide="prev">
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselHome" data-bs-slide="next">
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<!-- CARDS RANDOM -->
+<div class="bg-light">
+  <div class="container my-5">
+    <div class="row justify-content-center p-5">
+      <div class="col-12 text-center d-flex justify-content-center mb-4">
+        <h3>AYÚDANOS A ENCONTRARLES UN HOGAR</h3>
+      </div>
+
+      <div class="row mt-3 g-4 justify-content-center">
+        <div class="col-8 col-sm-6 col-md-4 col-lg-3" *ngFor="let animal of arrHomeAnimals">
+          <app-animal-card [myAnimal]="animal"></app-animal-card>
+        </div>
+      </div>
+
+      <div class="col-12 text-center">
+        <a [routerLink]="['/catalogo']" class="btn btn-danger mt-5">Ver Catálogo</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ICONOS SERVICIOS -->
+<div class="iconos container my-5">
+  <div class="row justify-content-center my-4 text-center">
+    <div class="col-12 text-center d-flex justify-content-center">
+      <h3>NUESTRO COMPROMISO</h3>
+    </div>
+
+    <div class=" iconos-img col-12 col-sm-6 my-4 col-lg-4 p-5">
+      <img src="/assets/images/icono1.png" alt="icono1">
+      <h6 class=" mt-4 p-3 border-top border-danger border-2 text-center">Cuidados veterinarios.</h6>
+    </div>
+    <div class="iconos-img col-12 col-sm-6 my-4 col-lg-4 p-5">
+      <img src="/assets/images/icono2.png" alt="icono2">
+      <h6 class="p-3 mt-4 border-top border-danger border-2 text-center">Recogemos animales abandonados.</h6>
+    </div>
+    <div class=" iconos-img my-4 col-12 col-sm-6 col-lg-4  p-5">
+      <img src="/assets/images/icono3.png" alt="icono3">
+      <h6 class="mt-4 p-3 border-top border-danger border-2 text-center">Búsqueda de hogares.</h6>
+    </div>
+    <div class=" iconos-img my-4 col-12 col-sm-6 col-lg-4 p-5">
+      <img src="/assets/images/icono4.png" alt="icono4">
+      <h6 class="mt-4 p-3 border-top border-danger border-2 text-center">Cuidado y protección.</h6>
+    </div>
+  </div>
+</div>
+<br>
+
+<div class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-white">
+  <div class="mt-5">
+     <h1 class="mb-3 h2">¿Encontraste algún animal en situación de abandono?</h1>
+
+  <p>
+    Si encontraste algún animal en situación de abandono, por favor, pónganse en contacto con nosotros, iremos a recogerlo lo antes posible.
+  </p>
+
+  </div>
+
+ 
+</div>
+

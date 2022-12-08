@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg  bg-light shadow">
+  <div class="container-fluid g-5 my-2">
+    <img src="assets/images/logo.jpg" alt="logo" class="d-none d-sm-none d-md-block">
+    <a class="navbar-brand text-danger h1 col-6 col-md mx-3" href="#">MADRID AL RESCATE</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse ms-5" id="navbarNav">
+      <ul class="navbar-nav w-100 d-flex justify-content-evenly">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" [routerLink]="['/inicio']" routerLinkActive="text-danger">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/sobre-nosotros']" routerLinkActive="text-danger">¿Quiénes Somos?</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/como-ayudar']" routerLinkActive="text-danger">Cómo Ayudar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/catalogo']" routerLinkActive="text-danger">Adopciones</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/contacto']" routerLinkActive="text-danger">Contacto</a>
+        </li>
+        <li class="nav-item" *ngIf="logged">
+          <i class="bi bi-person-fill nav-link" [routerLink]="['/cuadro-mandos']" routerLinkActive="text-danger"></i>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Mensaje alerta de bandono -->
+<div class="alert alert-warning py-1 m-0 rounded-0" role="alert"
+  onclick='window.location= "//api.whatsapp.com/send?phone=34649775671&text=Si%20has%20encontrado%20un%20animal%20sin%20hogar.%20Póngase%20en%20contacto%20con%20nosotros.";'
+  *ngIf="!logged">
+  <p class="position-relative m-0 p-1 pe-5"><strong>¡ALERTA!</strong> Si conoces algún caso de abandono, contacta con
+    nosotros.
+    <span>
+      <!-- Link con número de whatsapp -->
+      <a href="https://api.whatsapp.com/send?phone=34649775671&text=Si%20has%20encontrado%20un%20animal%20sin%20hogar.%20Póngase%20en%20contacto%20con%20nosotros."
+        class="btn-wsp position-absolute top-0 end-0" target="_blank">
+        <i class="bi bi-whatsapp"></i>
+      </a>
+    </span>
+  </p>
+</div>

@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="mb-3 text-center text-dark">
+        <h2>Encuentra aquí a tu compañero</h2>
+    </div>
+    <div class="col-3">
+        <select (change)="typeSelector($event)" class="form-select" aria-label="Default select example">
+            <option selected disabled>Tipo de animal</option>
+            <option value="">Todos</option>
+            <option value="Perro">Perro</option>
+            <option value="Gato">Gato</option>
+        </select>
+    </div>
+    <div class="col-3">
+        <select (change)="genderSelector($event)" class="form-select" aria-label="Default select example">
+            <option selected disabled>Sexo</option>
+            <option value="">Todos</option>
+            <option value="Hembra">Hembra</option>
+            <option value="Macho">Macho</option>
+        </select>
+    </div>
+    <div class="col-3">
+        <select (change)="sizeSelector($event)" class="form-select" aria-label="Default select example">
+            <option selected disabled>Tamaño</option>
+            <option value="">Todos</option>
+            <option value="Pequeño">Pequeño</option>
+            <option value="Mediano">Mediano</option>
+            <option value="Grande">Grande</option>
+        </select>
+    </div>
+    <div class="col-1">
+        <a href="" class="btn btn-danger w-100">Filtrar</a>
+    </div>
+    <div class="col-2">
+        <button disabled class="btn btn-white border border-danger text-danger w-100">Borrar filtros</button>
+    </div>
+</div>

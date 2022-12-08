@@ -1,0 +1,114 @@
+<div class="container mt-5">
+
+    <!-- Formulario Crear Animal -->
+    <form [formGroup]="createAnimal" (ngSubmit)="onSubmit()">
+        <div class="row justify-content-center">
+
+            <!-- Campo Nombre -->
+            <div class="col-8 mb-3  me-1">
+                <label class="form-label">Nombre</label>
+                <input type="text" class="form-control" formControlName="nombre">
+                <p class="error" *ngIf="checkControl('nombre','minlength')">El campo tiene que tener mínimo 2 caracteres
+                </p>
+                <p class="error" *ngIf="checkControl('nombre','maxlength')">El campo tiene que tener máximo 20
+                    caracteres</p>
+            </div>
+
+            <!-- Campo Fecha Entrada -->
+            <div class="col-8 col-lg-4 mb-3 me-1">
+                <label class="form-label">Fecha de entrada</label>
+                <input type="date" class="form-control" formControlName="fechaEntrada">
+                <p class="error" *ngIf="checkControl('fecha','required')">El campo es obligatorio</p>
+            </div>
+            <div class="col-8 col-lg-4 mb-3 me-1">
+                <label class="form-label">Raza</label>
+                <input type="text" class="form-control" formControlName="raza">
+                <p class="error" *ngIf="checkControl('nombre','minlength')">El campo tiene que tener mínimo 3 caracteres
+                </p>
+                <p class="error" *ngIf="checkControl('nombre','maxlength')">El campo tiene que tener máximo 15
+                    caracteres</p>
+            </div>
+
+            <!-- Campo Tipo -->
+            <div class="col-8 col-lg-4 mb-3 me-1">
+                <label class="form-label">Tipo</label>
+                <select formControlName="tipo" class="form-select">
+                    <option selected value="Perro">Perro</option>
+                    <option value="Gato">Gato</option>
+                    <p class="error" *ngIf="checkControl('tipo','required')">El campo es obligatorio</p>
+                </select>
+            </div>
+
+            <!-- Campo Edad -->
+            <div class="col-8 col-lg-4 mb-3 me-1">
+                <label class="form-label">Edad</label>
+                <input type="number" min="0" class="form-control" formControlName="edad">
+                <p class="error" *ngIf="checkControl('edad','agevalidator')">{{
+                    createAnimal.get('edad')?.errors?.['agevalidator'] }}</p>
+            </div>
+
+            <!-- Campo Tamaño -->
+            <div class="col-8 col-lg-4 mb-3 me-1">
+                <label class="form-label">Tamaño</label>
+                <select formControlName="tamaño" class="form-select">
+                    <option selected value="Pequeño">Pequeño</option>
+                    <option value="Mediano">Mediano</option>
+                    <option value="Grande">Grande</option>
+                    <p class="error" *ngIf="checkControl('tamaño','required')">El campo es obligatorio</p>
+                </select>
+            </div>
+
+            <!-- Campo Salud -->
+            <div class="col-8 col-lg-4 mb-3 me-1">
+                <label class="form-label">Salud</label>
+                <input type="text" class="form-control" formControlName="salud">
+                <p class="error" *ngIf="checkControl('salud','required')">El campo es obligatorio</p>
+            </div>
+
+            <!-- Campo Género -->
+            <div class="col-8 col-lg-4 mb-3 me-1">
+                <label class="form-label">Sexo</label>
+                <select formControlName="sexo" class="form-select">
+                    <option selected value="Hembra">Hembra</option>
+                    <option value="Macho">Macho</option>
+                    <p class="error" *ngIf="checkControl('sexo','required')">El campo es obligatorio</p>
+                </select>
+            </div>
+
+            <!-- Campo Prioridad -->
+            <div class="col-8 col-lg-4 mb-3 me-1">
+                <label class="form-label">Urgencia</label>
+                <select formControlName="urgencia" class="form-select">
+                    <option selected value="Poco">Poco</option>
+                    <option value="Media">Media</option>
+                    <option value="Grave">Grave</option>
+                    <p class="error" *ngIf="checkControl('urgencia','required')">El campo es obligatorio</p>
+                </select>
+            </div>
+
+            <!-- Campo Descripción -->
+            <div class="col-8 mb-3 me-1">
+                <label class="form-label">Descripción</label>
+                <textarea class="form-control" formControlName="descripcion"></textarea>
+                <p class="error" *ngIf="checkControl('descripcion','required')">El campo es obligatorio</p>
+            </div>
+
+
+            <!-- Campo Subir Imágenes -->
+            <div class="col-8 mb-3 mx-1">
+                <label class="form-label">Imágenes <small>(Máximo 4)</small></label>
+                <input class="form-control" type="file" formControlName="imagenes" multiple
+                    (change)="uploadImages($event)">
+                <p class="error" *ngIf="checkControl('imagenes','required')">El campo es obligatorio</p>
+            </div>
+
+            <!-- Botón Enviar y Cancelar Formulario -->
+            <div class="col-8 my-3 mx-1 text-center">
+                <button [routerLink]="['/cuadro-mandos', 'animales']"
+                    class="btn btn-white text-danger border border-danger mx-2 px-2">Cancelar</button>
+                <input type="submit" value="Añadir" class="btn btn-danger px-3" [disabled]="!createAnimal.valid">
+                <p class="m-0 mt-2 text-danger" *ngIf="message">{{ message }}</p>
+            </div>
+        </div>
+    </form>
+</div>

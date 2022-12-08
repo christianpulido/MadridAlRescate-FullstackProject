@@ -1,0 +1,51 @@
+.carousel-inner {
+    height: 450px;
+}
+
+.carousel-item,
+img {
+    height: 100% !important;
+    width: 100% !important;
+    object-fit: cover;
+}
+
+
+.iconos-img,
+img {
+    height: 200px;
+    width: 200px;
+}
+
+h3 {
+    font-family: 'Caveat', cursive;
+    font-size: 30px;
+}
+
+.bg-image {
+
+    height: 23em;
+
+
+    background-image: no-repeat;
+    background-image: fixed;
+    background-image: center;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+
+
+
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/assets/images/fotoPerro9.JPG');
+}
+
+/* Minimiza las letras en este tramo */
+@media only screen and (min-width:1400px) and (max-width:5000px) {
+    .bg-image {
+
+        background-position: 50% 35%;
+
+    }
+}

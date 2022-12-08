@@ -1,0 +1,43 @@
+<div class="container mt-5">
+    <form [formGroup]="createDonation" (ngSubmit)="onSubmit()">
+        <div class="row justify-content-center">
+            <div class="col-8  mb-3 me-1">
+                <label class="form-label">Nombre</label>
+                <input type="text" class="form-control" formControlName="nombre">
+                <p class="error" *ngIf="checkControl('nombre','minlength')">El campo tiene que tener mínimo 2 caracteres</p>
+                    <p class="error" *ngIf="checkControl('nombre','maxlength')">El campo tiene que tener máximo 30 caracteres</p>
+            </div>
+            <div class="col-8 col-lg-4 mb-3 me-1">
+                <label class="form-label">Cantidad</label>
+                <input type="number" min="0" class="form-control" formControlName="cantidad">
+                <p class="error" *ngIf="checkControl('cantidad','minlength')">El campo tiene que tener mínimo 1 caracter</p>
+                    <p class="error" *ngIf="checkControl('cantidad','maxlength')">El campo tiene que tener máximo 10 caracteres</p>
+            </div>
+            <div class="col-8 col-lg-4 mb-3 me-1">
+                <label class="form-label">Fecha</label>
+                <input type="date" class="form-control" formControlName="fecha">
+                <p class="error" *ngIf="checkControl('fecha','required')">El campo fecha es obligatorio</p>
+
+            </div>
+            <div class="col-8 col-lg-4 mb-3 me-1">
+                <label class="form-label">Método de Pago</label>
+                <input type="text" class="form-control" formControlName="metodoPago">
+                <p class="error" *ngIf="checkControl('metodoPago','minlength')">El campo tiene que tener mínimo 2 caracteres</p>
+                    <p class="error" *ngIf="checkControl('metodoPago','maxlength')">El campo tiene que tener máximo 20 caracteres</p>
+            </div>
+            <div class="col-8 col-lg-4 mb-3 me-1">
+                <label class="form-label">Teaming</label>
+                <select formControlName="isTeaming" class="form-select">
+                    <option selected value="No">No</option>
+                    <option value="Si">Si</option>
+                    <p class="error text-white" *ngIf="checkControl('isTeaming','required')">El campo Teaming es obligatorio</p>
+                </select>
+            </div>
+
+            <div class="col-8 my-3 mx-1 text-center">
+                <button [routerLink]="['/cuadro-mandos', 'donaciones']" class="btn btn-white text-danger border border-danger w-25 mx-2">Cancelar</button>
+                <input type="submit" value="Añadir" class="btn btn-danger w-25" [disabled]="!createDonation.valid">
+            </div>
+        </div>
+    </form>
+</div>

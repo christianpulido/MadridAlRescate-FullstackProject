@@ -1,0 +1,91 @@
+<div class="container mt-5">
+    <form [formGroup]="createEntity" (ngSubmit)="onSubmit()">
+        <div class="row justify-content-center">
+            <div class="col-8 col-lg-4 mb-3 me-1">
+                <label class="form-label">Nombre</label>
+                <input type="text" class="form-control" formControlName="nombre">
+                <p class="error" *ngIf="checkControl('nombre','minlength')">El campo tiene que tener mínimo 2 caracteres
+                </p>
+                <p class="error" *ngIf="checkControl('nombre','maxlength')">El campo tiene que tener máximo 20
+                    caracteres</p>
+            </div>
+            <div class="col-8 col-lg-4 mb-3 me-1">
+                <label class="form-label">Apellido</label>
+                <input type="text" class="form-control" formControlName="apellido">
+                <p class="error" *ngIf="checkControl('apellido','minlength')">El campo tiene que tener mínimo 2
+                    caracteres</p>
+                <p class="error" *ngIf="checkControl('apellido','maxlength')">El campo tiene que tener máximo 40
+                    caracteres</p>
+            </div>
+            <div class="col-8 col-lg-4 mb-3 me-1">
+                <label class="form-label">Edad</label>
+                <input type="number" class="form-control" formControlName="edad" max="99" min="0">
+                <p class="error text-white" *ngIf="checkControl('edad','required')">El campo edad es obligatorio</p>
+            </div>
+            <div class="col-8 col-lg-4 mb-3 me-1">
+                <label class="form-label">DNI</label>
+                <input type="text" class="form-control" formControlName="dni">
+            </div>
+            <div class="col-8 col-lg-4 mb-3 me-1">
+                <label class="form-label">Email</label>
+                <input type="text" class="form-control" formControlName="email">
+                <p class="error" *ngIf="checkControl('email','required')">El campo email es obligatorio</p>
+
+                <p class="error" *ngIf="checkControl('email','pattern')">El campo correo no es valido</p>
+            </div>
+
+            <div class="col-8 col-lg-4 mb-3 me-1">
+                <label class="form-label">Telefono</label>
+                <input type="number" class="form-control" formControlName="telefono" min="0">
+                <p class="error" *ngIf="checkControl('telefono','required')">El campo telefono es obligatorio</p>
+            </div>
+            <div class="col-8 col-lg-4 mb-3 me-1">
+                <label class="form-label">Dirección</label>
+                <input type="text" class="form-control" formControlName="direccion">
+                <p class="error" *ngIf="checkControl('direccion','minlength')">El campo tiene que tener mínimo 10
+                    caracteres</p>
+                <p class="error" *ngIf="checkControl('direccion','maxlength')">El campo tiene que tener máximo 100
+                    caracteres</p>
+            </div>
+            <div class="col-8 col-lg-4 mb-3 me-1">
+                <label class="form-label">Tiene o ha tenido mascota</label>
+                <select formControlName="mascota" class="form-select">
+                    <option value="no">No</option>
+                    <option value="si">Si</option>
+                    <p class="error" *ngIf="checkControl('mascota','required')">El campo mascota es obligatorio</p>
+                </select>
+            </div>
+            <div class="col-8 col-lg-4 mb-3 me-1">
+                <label class="form-label">Tipo de inmueble</label>
+                <input type="text" class="form-control" formControlName="tipoInmueble">
+                <p class="error" *ngIf="checkControl('tipoInmueble','required')">El campo 'Tipo de Inmueble' es
+                    obligatorio</p>
+            </div>
+            <div class="col-8 col-lg-4 mb-3 me-1">
+                <label class="form-label">Razon</label>
+                <select formControlName="status" class="form-select">
+                    <option value="Adoptar">Adoptar</option>
+                    <option value="Acogida">Acogida</option>
+                    <option value="Apadrinar">Apadrinar</option>
+                    <option value="Voluntario">Voluntario</option>
+                    <option value="Donante">Donante</option>
+                </select>
+                <p class="error" *ngIf="checkControl('status','required')">El campo 'Razon' es obligatorio</p>
+
+            </div>
+            <div class="col-8 mb-4 me-1">
+                <label class="form-label">Descripción</label>
+                <textarea class="form-control" formControlName="descripcion"></textarea>
+                <p class="error" *ngIf="checkControl('descripcion','required')">El campo 'Descripción' es obligatorio
+                </p>
+            </div>
+
+            <!-- Botón Enviar y Cancelar Formulario -->
+            <div class="col-8 my-3 mx-1 text-center">
+                <button [routerLink]="['/cuadro-mandos', 'personas']"
+                    class="btn btn-white text-danger border border-danger mx-2">Cancelar</button>
+                <input type="submit" value="Añadir" class="btn btn-danger" [disabled]="!createEntity.valid">
+            </div>
+        </div>
+    </form>
+</div>

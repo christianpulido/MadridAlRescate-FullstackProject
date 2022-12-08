@@ -1,0 +1,53 @@
+POST http://localhost:3000/api/usuarios/register
+Content-Type: application/json
+
+{
+    "nombre": "Christian",
+    "apellido": "Pulido",
+    "email": "christian@gmail.com",
+    "password": "Admin123",
+    "isAdmin": 1, 
+    "isActive": 1
+}
+
+
+
+###
+PUT http://localhost:3000/api/usuarios/register
+Content-Type: application/json
+
+{
+    "nombre": "Christian",
+    "apellido": "Pulido",
+    "email": "christian@gmail.com",
+    "password": "Admin123",
+    "isAdmin": 0, 
+    "isActive": 1
+}
+
+
+
+
+
+### 
+POST http://localhost:3000/api/usuarios/login
+Content-Type: application/json
+
+{
+    
+    "email": "christian@gmail.com",
+    "password": "Admin123"
+    
+}
+
+
+
+
+
+###
+GET http://localhost:3000/api/usuarios/profile
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInVzZXJBZG1pbiI6MSwiZXhwaXJlc0F0IjoxNjY4ODI5NDUwLCJpYXQiOjE2Njg4MTE0NTB9.Jx7uLgn9Pz2K1WkiMwygjpLehgR3pR8aVSsb5ufwLxY
+
+
+###
+GET http://localhost:3000/api/usuarios/

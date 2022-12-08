@@ -1,0 +1,59 @@
+<!-- Maquetación de formulario de registro -->
+
+<div class="registerBody">
+
+    <div class="card mx-4 bg-danger">
+
+        <h1 class="text-center text-light">Registro</h1>
+
+        <form novalidate [formGroup]="register" (ngSubmit)="getDataForm()" class="row justify-content-center">
+
+            <!-- Campo Nombre -->
+            <div class="form-group mb-3 col-9 col-md-5 mx-3">
+                <label for="name" class="form-label text-light mb-2"><i class="bi bi-person"></i> Nombre</label>
+                <input type="text" id="name" formControlName="nombre" class="form-control">
+                <p class="msg-error" *ngIf="nombreError?.param">{{nombreError?.msg}}</p>
+            </div>
+
+            <!-- Campo Apellidos -->
+            <div class="form-group mb-3 col-9 col-md-5 mx-3">
+                <label for="surname" class="form-label text-light  mb-2"><i class="bi bi-person"></i> Apellidos</label>
+                <input type="text" id="apellidos" formControlName="apellido" class="form-control">
+                <p class="msg-error" *ngIf="apellidoError?.param">{{apellidoError?.msg}}</p>
+            </div>
+
+            <!-- Campo Correo Electrónico -->
+            <div class="form-group mb-3  col-9 col-md-11">
+                <label for="email" class="form-label text-light  mb-2"><i class="bi bi-envelope"></i> Email</label>
+                <input type="email" id="email" formControlName="email" class="form-control">
+                <p class="msg-error" *ngIf="emailError?.param">{{emailError?.msg}}</p>
+                <p class="msg-error" *ngIf="message">{{message}}</p>
+            </div>
+
+            <!-- Campo Contraseña -->
+            <div class="form-group mb-3  col-9 col-md-5 mx-3">
+                <label for="password" class="form-label text-light  mb-2"><i class="bi bi-lock"></i> Contraseña</label>
+                <input type="password" id="password" formControlName="password" class="form-control">
+                <p class="msg-error" *ngIf="passwordError?.param">{{passwordError?.msg}}</p>
+            </div>
+
+            <!-- Campo Repetir Contraseña -->
+            <div class="form-group mb-3  col-9 col-md-5 mx-3">
+                <label for="repeatPassword" class="form-label text-light  mb-2"><i class="bi bi-lock"></i> Repetir
+                    Contraseña</label>
+                <input type="password" id="repeatPassword" formControlName="repeatPassword" class="form-control">
+                <p class="msg-error" *ngIf="repeatPasswordError?.param">{{repeatPasswordError?.msg}}</p>
+            </div>
+
+            <p class="error text-center mb-3"
+                *ngIf="register.hasError('passwordvalidator') && register.get('repeatPassword')?.touched">Las
+                contraseñas no coinciden</p>
+
+
+            <!-- Botón De Envío -->
+            <div class="d-flex align-items-center justify-content-center mt-4">
+                <input type="submit" value="Enviar" class="btn text-dark bg-white btn-outline-light opacity-75 w-50 ">
+            </div>
+        </form>
+    </div>
+</div>

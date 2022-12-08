@@ -1,0 +1,63 @@
+<div class="d-flex align-items-center justify-content-center min-vh-100">
+
+  <div class="card mx-3">
+    <div class="additional bg-danger">
+      <div class="user-card">
+        
+        <div class="logo-container">
+          <div class="logo">
+            <img src="/assets/images/logo.jpg" width="50px" alt="logo">
+          </div>
+        </div>
+
+
+      </div>
+      <div class="more-info">
+        <h1 class="mb-4 text-light">CONTACTA CON NOSOTROS</h1>
+        <form [formGroup]="datos">
+          <div class="form-group">
+            <input type="text" placeholder="¿Cómo te llamas?" class="form-control mb-3" name="nombre"
+              formControlName="nombre" />
+            <p class="error text-dark" *ngIf="checkControl('nombre','minlength')">El campo tiene que tener mínimo 2
+              caracteres</p>
+            <p class="error text-white" *ngIf="checkControl('nombre','maxlength')">El campo tiene que tener máximo 20
+              caracteres</p>
+          </div>
+          <div class="form-group">
+            <input type="text" placeholder="Tu número de teléfono" class="form-control mb-3" name="telefono"
+              formControlName="telefono" />
+            <p class="error text-dark" *ngIf="checkControl('telefono','required')">El campo telefono es obligatorio</p>
+          </div>
+
+          <div class="form-group">
+            <input type="text" placeholder="Escriba el motivo de su contacto" class="form-control mb-4"
+              formControlName="asunto" name="asunto" />
+            <p class="error text-dark" *ngIf="checkControl('asunto','minlength')">El campo tiene que tener mínimo 2
+              caracteres</p>
+            <p class="error text-white" *ngIf="checkControl('asunto','maxlength')">El campo tiene que tener máximo 50
+              caracteres</p>
+          </div>
+
+          <div class="form-group">
+            <input name="emailaddress" placeholder="Escriba su email*" class="form-control mb-3" type="email"
+              formControlName="email" name="email" />
+            <p class="error text-dark" *ngIf="checkControl('email','required')">El campo email es obligatorio</p>
+          </div>
+          <div class="form-group">
+            <textarea rows="4" cols="40" name="subject" placeholder="Por favor, escriba su mensaje*"
+              class="form-control mb-3" formControlName="mensaje" name="mensaje"></textarea>
+            <p class="error text-dark" *ngIf="checkControl('mensaje','minlength')">El campo tiene que tener mínimo 2
+              caracteres</p>
+            <p class="error text-white" *ngIf="checkControl('mensaje','maxlength')">El campo tiene que tener máximo 245
+              caracteres</p>
+          </div>
+          <div class="text-center mt-3">
+            <button type="submit" class="btn text-dark bg-white btn-outline-light" [disabled]="!datos.valid"
+              (click)="envioCorreo()">Enviar</button>
+          </div>
+          <div class="text-center mt-3" *ngIf="confirmacion">
+            <p class="text-dark">{{confirmacion}}</p>
+          </div>
+
+
+        </form>
